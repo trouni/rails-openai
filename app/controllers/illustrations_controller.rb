@@ -3,8 +3,8 @@ class IllustrationsController < ApplicationController
     @character = Character.find(params[:character_id])
 
     prompt = GenerateSituation.new(@character.description, params[:situation]).call
-
     illustration_url = GenerateImage.new(prompt).call
+
     # Store it as an illustration in the Character instance
     @character.attach_illustration_from_url(illustration_url)
 

@@ -22,8 +22,8 @@ class DescribePhoto
 
     response = client.chat(
         parameters: {
-            model: "gpt-4-vision-preview", # Required.
-            messages: [{ role: "user", content: messages}], # Required.
+            model: "gpt-4-vision-preview",
+            messages: [{ role: "user", content: messages}],
             max_tokens: 2000,
         })
     p response.dig("choices", 0, "message", "content")

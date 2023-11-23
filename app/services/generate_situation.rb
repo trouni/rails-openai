@@ -19,7 +19,7 @@ class GenerateSituation
     puts '-' * 50
     response = client.chat(
     parameters: {
-        model: "gpt-3.5-turbo", # Required.
+        model: "gpt-4-1106-preview",
         messages: [
           { role: "user", content: "Here is a character description: #{@character_description}"},
           { role: "user", content: INSTRUCTIONS },
