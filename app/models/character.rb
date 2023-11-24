@@ -5,9 +5,9 @@ class Character < ApplicationRecord
 
   has_one_attached :photo
   has_many_attached :illustrations
-  
+
   def generate_description
-    update(description: DescribePhoto.new(photo.url).call)
+    UpdateCharacterDescriptionJob.perform_later(id)
   end
 
   def attach_illustration_from_url(url)
